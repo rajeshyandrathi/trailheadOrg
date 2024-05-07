@@ -5,8 +5,8 @@
          "default": true 
      } 
    ], 
-   "name": "PROJECT_NAME_HERE", 
+   "name": "Trailhead Sandbox BackUp", 
    "namespace": "", 
-   "sfdcLoginUrl": "https://login_or_test_here.salesforce.com/", 
-   "sourceApiVersion": "55.0"
+   "sfdcLoginUrl": "https://login.salesforce.com/", 
+   "sourceApiVersion": "58.0"
 }
