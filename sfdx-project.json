@@ -5,7 +5,7 @@
          "default": true 
      } 
    ], 
-   "name": "Trailhead Sandbox BackUp", 
+   "name": "Trailhead_Sandbox_BackUp", 
    "namespace": "", 
    "sfdcLoginUrl": "https://login.salesforce.com/", 
    "sourceApiVersion": "58.0"
