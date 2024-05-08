@@ -1,0 +1,15 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
+    <aura:attribute name="WholeNumber" type="integer" access="public"/>
+    <aura:attribute name="Percentage" type="integer" access="public"/>
+    
+    <div>
+          <lightning:input type="number" name="WholeNumber" label="Enter a number"
+                           value="{!v.WholeNumber}"/>
+           <lightning:input type="number" name="Percentage" label="Enter a Percentage"
+                           value="{!v.Percentage}" formatter="percent-fixed"/>                
+     </div>
+    
+    <br>
+    </br>
+    {!v.Percentage} percentage of {!v.WholeNumber} is {!div(mult(v.WholeNumber,v.Percentage),100)}
+</aura:component>

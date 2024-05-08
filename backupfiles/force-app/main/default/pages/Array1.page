@@ -1,0 +1,8 @@
+<apex:page controller="Array1">
+    
+    {!val[0]}<br/>
+    {!val[1]}<br/>
+    {!val[2]}<br/>
+    {!val[3]}<br/>
+    {!val}
+</apex:page>

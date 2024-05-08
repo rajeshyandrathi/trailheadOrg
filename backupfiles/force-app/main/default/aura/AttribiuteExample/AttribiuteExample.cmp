@@ -1,0 +1,14 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
+    <aura:attribute name="Name" type="String" default="Rajesh Yandrathi" access="public" />
+    <aura:attribute name="Age" type="integer" default="27" access="private" />
+    <aura:attribute name="colour" type="String[]" default="red,green,blue" access="private" />
+    <aura:attribute name="colourlist" type="List" default="[red,green,blue]" access="private" />
+    <aura:attribute name="colourset" type="Set" default="red,green,blue" access="private" />
+    <aura:attribute name="ContactObj" type="Contact" access="public" />
+    
+    Welcome {!v.Name}, Age: {!v.Age}, Color: {!v.colour[0]} <br/>
+    {!v.colourlist[1]},{!v.colourset[2]}
+    <br/>    
+    <lightning:button value="Component Methods" label="Component Methods" onclick="{!c.doclick}"/>
+    
+</aura:component>

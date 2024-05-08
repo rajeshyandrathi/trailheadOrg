@@ -1,0 +1,75 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" >   
+    <lightning:card class="c-container slds-text-title_bold" title="Expand/Collapse Example:">
+	<div class="slds-section slds-is-close" aura:id="fruitsSection">
+        <!--section header-->
+        <h3 class="slds-section__title">
+            <button aria-controls="fruitsList" class="slds-button slds-section__title-action">
+                <span onclick="{!c.toggleSection}" data-auraId="fruitsSection">
+                    <lightning:icon iconName="utility:switch"
+                                    size="x-small"
+                                    class="slds-section__title-action-icon slds-button__icon_left"
+                                    alternativeText="button icon" 
+                                    />
+                </span>
+                <span class="slds-truncate" title="Fruits">Fruits</span>
+            </button>
+        </h3>
+        <!--section body-->
+        <div class="slds-section__content" id="fruitsList">
+            <p>Apple</p>
+            <p>Apricots</p>
+            <p>Banana</p>
+            <p>Cherimoya</p>
+            <p>Grapefruit</p>
+        </div>
+    </div>
+    <!--section 2 start-->  
+    <div class="slds-section slds-is-close" aura:id="VegetablesSection">
+        <!--section header-->
+        <h3 class="slds-section__title">
+            <button aria-controls="VegetablesId" class="slds-button slds-section__title-action">
+                <span onclick="{!c.toggleSection}" data-auraId="VegetablesSection">
+                    <lightning:icon iconName="utility:switch"
+                                    alternativeText="button icon"
+                                    size="x-small"
+                                    class="slds-section__title-action-icon slds-button__icon_left"/>
+                </span>
+                <span class="slds-truncate" title="Vegetables">Vegetables</span>
+            </button>
+        </h3>
+        <!--section body-->
+        <div class="slds-section__content" id="VegetablesId">
+            <p>Broccoli</p>
+            <p>Corn</p>
+            <p>Pumpkin</p>
+            <p>Tomato</p>
+            <p>Beetroot</p>
+        </div>
+    </div>
+    <!--section 2 end-->
+    
+    <!--section 3 start-->  
+    <div class="slds-section slds-is-close" aura:id="colorSection">
+        <!--section header-->
+        <h3 class="slds-section__title">
+            <button aria-controls="ColorsId" class="slds-button slds-section__title-action">
+                <span onclick="{!c.toggleSection}" data-auraId="colorSection">
+                    <lightning:icon iconName="utility:switch"
+                                    alternativeText="button icon"
+                                    size="x-small"
+                                    class="slds-section__title-action-icon slds-button__icon_left"/>
+                </span>
+                <span class="slds-truncate" title="Colors">Colors</span>
+            </button>
+        </h3>
+        <!--section body-->
+        <div class="slds-section__content" id="ColorsId">
+            <p>Red</p>
+            <p>Green</p>
+            <p>Blue</p>
+            <p>YelloW</p>
+            <p>Black</p>
+        </div>
+    </div>
+</lightning:card>
+</aura:component>

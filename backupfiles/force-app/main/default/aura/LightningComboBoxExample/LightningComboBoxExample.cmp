@@ -1,0 +1,25 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" controller="AccountList" >
+<aura:attribute name="Accounts" type="Account[]" />
+<aura:handler name="init" value="{!this}" action="{!c.doinit}" />
+<lightning:card class="c-container slds-text-title_bold" title="Lightning ComboBox Example">
+    <lightning:layout>
+    <article class="slds-card slds-m-bottom_medium">
+     <div class="slds-media__body">
+     <div>
+    <lightning:layoutitem>
+              <lightning:select aura:id="act" name="selectAccount" >
+                  <option value="" label="Select Account">
+                  </option>
+                  <aura:iteration items="{!v.Accounts}" var="item" >
+                      <option value="{!item.Id}" label="{!item.Name}" >
+                          {!item.Name}
+                      </option>
+                  </aura:iteration>
+              </lightning:select>
+    </lightning:layoutitem>
+      </div>
+      </div>
+    </article>
+</lightning:layout>
+</lightning:card>
+</aura:component>

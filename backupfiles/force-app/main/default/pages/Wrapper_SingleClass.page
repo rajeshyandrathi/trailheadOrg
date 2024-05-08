@@ -1,0 +1,9 @@
+<apex:page controller="Wrapper11">
+    <apex:form >
+    Name {!W1.name}<br/>
+ 	AGe {!W1.age}<br/>
+ 	Sal {!sal}<br/>
+ 	Exp {!exp}<br/> 
+    </apex:form>
+    
+</apex:page>

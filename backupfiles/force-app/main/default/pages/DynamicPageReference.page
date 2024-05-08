@@ -1,0 +1,12 @@
+<apex:page controller="DyanmicPageReference">
+    <apex:form >   
+        <apex:commandButton value="Create" action="{!create}"/>   
+    <apex:pageBlock >
+        <apex:inputField value="{!acc.Name}"/>
+        <apex:inputField value="{!acc.Industry}"/>
+        <apex:inputField value="{!acc.Rating}"/>    
+    </apex:pageBlock>    
+     
+    </apex:form>
+    
+</apex:page>

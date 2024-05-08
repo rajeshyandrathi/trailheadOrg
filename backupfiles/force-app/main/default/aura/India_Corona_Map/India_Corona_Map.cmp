@@ -1,0 +1,51 @@
+<aura:component implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" >
+    <aura:attribute name="selectedState" type="String" default="Andhra Pradesh"></aura:attribute>
+    <aura:attribute name="states" type="list"></aura:attribute>
+    <aura:attribute name="stateData" type="Object"></aura:attribute>
+    <aura:attribute name="stateChartInstance" type="Object"></aura:attribute>
+    <aura:attribute name="isLoading" type="boolean" default="true"></aura:attribute>
+    <ltng:require scripts="{!$Resource.Corona_Chart_Scripts+'/Chart.min.js'}" 
+                  afterScriptsLoaded="{!c.initialiseSetup}">
+    </ltng:require>
+    <div class="body">
+        <aura:if isTrue="{!!v.isLoading}">
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12">
+                    <div class="slds-box slds-m-around_xx-small">
+                        <canvas aura:id="dailyCount"></canvas>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12">
+                    <div class="slds-box slds-m-around_xx-small">
+                        <canvas aura:id="overallCount"></canvas>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12">
+                    <div class="slds-box slds-m-around_xx-small">
+                        <canvas aura:id="historicalPerDayCount"></canvas>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12">
+                    <div class="slds-box slds-m-around_xx-small">
+                        <canvas aura:id="historicalTotalCount"></canvas>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_1-of-1">
+                    <div class="slds-box slds-m-around_xx-small">
+                        <lightning:select label="Select State" value="{!v.selectedState}" onchange="{!c.onSelectState}">
+                            <aura:iteration items="{!v.states}" var="state">
+                                <option text="{!state}" value="{!state}" selected="{!state == v.selectedState}"></option>
+                            </aura:iteration>
+                        </lightning:select> 
+                        <canvas aura:id="stateCount"></canvas>
+                    </div>
+                </div>
+            </div>
+            <aura:set attribute="else">
+                <div class="spinnerHolder">
+                    <lightning:spinner class="spins" alternativeText="Fetching data from API.." size="large" />
+                </div>
+            </aura:set>                
+        </aura:if>
+    </div>
+</aura:component>

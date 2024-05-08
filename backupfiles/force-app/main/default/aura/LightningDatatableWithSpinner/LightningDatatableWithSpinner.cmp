@@ -1,0 +1,33 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" controller="AccountControllerExample">
+    <!--aura handler with waiting and donewaiting events-->
+    <aura:handler event="aura:waiting" action="{!c.showSpinner}"/>
+    <aura:handler event="aura:doneWaiting" action="{!c.hideSpinner}"/>
+    
+     <!--component attributes -->
+    <aura:attribute name="spinner" type="boolean" default="FALSE"/>
+    <aura:attribute name="accListToDisplay" type="Account[]" />
+  	<aura:attribute name="columns" type="List"/>
+    <aura:handler name="init" value="{! this }" action="{! c.doInit }"/>
+    <Lightning:card class="c-container" title="Lightning Table with Spinner:">
+     <!--loading spinner start-->
+    <aura:if isTrue="{!v.spinner}">
+        <div aura:id="spinnerId" class="slds-spinner_container">
+            <div class="slds-spinner--brand  slds-spinner slds-spinner--large slds-is-relative" role="alert">
+                <span class="slds-assistive-text">Loading...</span>
+                <div class="slds-spinner__dot-a"></div>
+                <div class="slds-spinner__dot-b"></div>
+            </div>
+        </div>
+    </aura:if>
+    
+    <!-- Account section start-->
+    
+    <lightning:button variant="brand" label="Fetch Accounts" title="Fetch Accounts action" onclick="{!c.getAccounts}" />
+    <h3 class="slds-section-title--divider">Account List</h3> 
+    <lightning:datatable
+                keyField="id"
+                data="{! v.accListToDisplay }"
+                columns="{! v.columns }"
+                hideCheckboxColumn="false"/>
+    </Lightning:card>
+</aura:component>

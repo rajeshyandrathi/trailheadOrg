@@ -1,0 +1,9 @@
+<apex:page controller="SingleClass_CallMethod">
+    <apex:form >
+        <apex:commandButton value="m1" action="{!m1}"/> <br/><br/>
+        <apex:outputText value="{!aval}"></apex:outputText> <br/><br/>
+		<apex:outputText value="{!bval}"></apex:outputText> <br/><br/>
+		<apex:outputText value="{!cval}"></apex:outputText> <br/><br/>
+		<apex:outputText value="{!dval}"></apex:outputText> <br/><br/>           
+    </apex:form>    
+</apex:page>

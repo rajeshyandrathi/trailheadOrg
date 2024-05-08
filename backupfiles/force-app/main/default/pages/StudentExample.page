@@ -1,0 +1,5 @@
+<apex:page controller="StudentExample">
+ Name :{!name }<br/><br/>
+ Branch:{!branch}<br/><br/>
+ City : {!city} <br/><br/>
+</apex:page>

@@ -1,0 +1,37 @@
+<apex:page standardStylesheets="false" standardController="Account" recordSetVar="accounts" tabStyle="account" applyHtmlTag="false" applyBodyTag="false" showHeader="false">
+   <head>
+       <apex:slds />
+    </head> 
+    <body>
+    <div class="slds-scope">     
+        <table class="slds-table">
+            <thead>
+                <tr class="slds-text-title_caps">
+                    <th scope="col">
+                        <div class="slds-truncate" title="{!$ObjectType.Account.Fields.Name.Label}">{!$ObjectType.Account.Fields.Name.Label}</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <apex:repeat value="{!accounts}" var="a">
+                <tr>
+                  <td data-label="Account Name">
+                    <div class="slds-truncate" ><apex:outputLink value="{!URLFOR($Action.Account.View, a.id)}">{!a.name}</apex:outputLink></div>
+                  </td>
+      
+                </tr>
+                </apex:repeat>
+            </tbody>
+        </table>
+     <!--   
+     <div class="slds-scope">
+        <apex:pageBlock >
+            <apex:pageBlockTable value="{!accounts}" var="a" styleClass="slds-table">
+                <apex:column headerValue="{!$ObjectType.Account.Fields.Name.Label}">
+                    <apex:outputLink value="{!URLFOR($Action.Account.View, a.id)}">{!a.name}</apex:outputLink>
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>-->
+    </div>
+        </body>
+</apex:page>

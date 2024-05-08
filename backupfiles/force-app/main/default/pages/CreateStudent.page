@@ -1,0 +1,15 @@
+<apex:page standardcontroller="Student__c"> 
+    <apex:form >
+        <apex:pageBlock title="Insert Student">
+        <apex:pageBlockSection >
+            <apex:inputField value="{!Student__c.Name}"/>  
+            <apex:inputField value="{!Student__c.Mobile__c}"/>
+            <apex:inputField value="{!Student__c.Country__c}"/>
+            <apex:inputField value="{!Student__c.State__c}"/>
+            <apex:inputField value="{!Student__c.DOB__c}"/>
+         </apex:pageBlockSection>
+            <apex:commandButton action="{!save }" value="Save" onclick="StudentHandler()" />
+            <apex:commandButton action="{!cancel }" value="Cancel" />
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

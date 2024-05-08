@@ -1,0 +1,5 @@
+<apex:page controller="pageRef">
+    <apex:form >
+      <apex:commandButton value="pageRef" action="{!pageRef}"/>
+    </apex:form>
+</apex:page>

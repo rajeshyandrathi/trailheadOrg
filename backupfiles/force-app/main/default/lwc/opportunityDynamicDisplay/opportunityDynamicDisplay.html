@@ -1,0 +1,14 @@
+<template>
+    <lighning:card title="List of Opportunities">
+        <ul>
+            <template for:each={opportunities.data} for:item="opportuinity">
+            <li key={opportunity.Id}>
+                {opportunity.Name}
+            </li>
+            <li key={opportunity.Id}>
+                {opportunity.Amount}
+            </li>
+            </template>
+        </ul>
+    </lighning:card>
+</template>

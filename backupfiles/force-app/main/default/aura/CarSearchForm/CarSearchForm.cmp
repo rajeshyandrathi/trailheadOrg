@@ -1,0 +1,27 @@
+<aura:component controller="CarTypeSearch" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	
+     <!-- Attribute to controle visibility of New button -->
+    <aura:attribute name="showNew" type="boolean" />
+    <aura:attribute name="carTypes" type="Car_Type__c[]"/>
+    
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    
+    <!-- This event will be fired when user will click on 
+		search button and will selected carTypeId-->
+    <aura:registerEvent name="searchFormSubmit" type="c:SearchFormSubmitEvent" />
+    
+    <lightning:layout horizontalAlign="center">
+          <lightning:layoutItem>
+            <lightning:select name='selectItem' aura:id="carType" label='All Types' 
+                              variant="label-hidden" value="">
+                <option value="" text="All Types" />
+                <option value="" text="Sports Car" />
+                <option value="" text="Luxury Car" />
+           	</lightning:select>
+        </lightning:layoutItem>
+        <lightning:layoutItem padding="around-medium">
+             <lightning:button label="Search" variant="brand"  onclick="{!c.onFormSubmit}"/>
+            <lightning:button variant='neutral' label='New' onclick="{!c.createRecord}"/>
+        </lightning:layoutItem>
+    </lightning:layout>
+</aura:component>

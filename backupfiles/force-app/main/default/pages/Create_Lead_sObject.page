@@ -1,0 +1,23 @@
+<apex:page controller="Create_Lead_sObject" >
+    
+  <apex:form >
+    
+    <apex:pageBlock title="Lead">
+     <apex:pageblocksection columns="3">
+     <apex:inputfield Value="{!mylead.Lastname}"/>
+     </apex:pageblocksection>
+      <apex:pageblocksection >
+     <apex:inputfield Value="{!mylead.company}"/>
+     </apex:pageblocksection>  
+       <apex:pageblocksection >
+     <apex:inputfield Value="{!mylead.Status}"/>
+     </apex:pageblocksection>
+        
+    </apex:pageBlock> 
+    <apex:commandButton value="Create" action="{!create}"/>
+    <apex:commandButton value="Refresh" action="{!refresh}"/>
+    <apex:commandButton value="Save&New" action="{!save_new}"/>
+      
+  </apex:form>   
+      
+</apex:page>

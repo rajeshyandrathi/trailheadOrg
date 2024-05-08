@@ -1,0 +1,12 @@
+<apex:page >
+    
+    <apex:form >
+    <apex:pageBlock title="Student Details">
+        <apex:pageblockSection title="Collage Information">
+            
+        </apex:pageblockSection> 
+    </apex:pageBlock>
+    </apex:form>
+    
+    
+</apex:page>

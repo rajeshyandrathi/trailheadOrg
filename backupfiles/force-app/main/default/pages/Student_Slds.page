@@ -1,0 +1,86 @@
+<apex:page showHeader="false" standardStylesheets="false" sidebar="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0">
+  <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+    <head>
+      <meta charset="utf-8" />
+      <meta http-equiv="x-ua-compatible" content="ie=edge" />
+      <title>Salesforce Lightning Design System Trailhead Module</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <!-- Import the Design System style sheet -->
+      <apex:slds />
+        <apex:remoteObjects >
+    <apex:remoteObjectModel name="Student__c" fields="Id,Name,LastModifiedDate"/>
+    </apex:remoteObjects>
+    <body>
+      <!-- REQUIRED SLDS WRAPPER -->
+      <div class="slds-scope">
+        <!-- MASTHEAD -->
+        <p class="slds-text-heading_label slds-m-bottom_small"> Salesforce Lightning Design System Visualforce Workshop </p>
+        <!-- / MASTHEAD -->
+        <!-- PAGE HEADER -->
+          
+          <div class="slds-page-header">
+              <div class="slds-grid">
+                                      <div class="slds-media slds-no-space slds-grow">
+                      <div class="slds-media__figure">
+                        <svg aria-hidden="true" class="slds-icon slds-icon-standard-contact">
+                          <use xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/standard-sprite/svg/symbols.svg#contact')}"></use>
+                        </svg>
+                      </div>
+                      <div class="slds-media__body">
+                        <p class="slds-text-title_caps slds-line-height_reset">Students</p>
+                        <h1 class="slds-page-header__title slds-m-right_small slds-align-middle slds-truncate" title="My Students">My Students</h1>
+                      </div>
+                    </div>
+                   <div class="slds-col slds-no-flex slds-grid slds-align-top">
+                       <div class="slds-button-group" role="group">
+    				   <button class="slds-button slds-button_outline-brand"> Add Student </button>
+                       <button class="slds-button slds-button_brand"> More </button>
+                   </div>
+                   </div>
+                   
+              </div>
+          </div>
+        <!-- / PAGE HEADER -->
+        <!-- PRIMARY CONTENT WRAPPER -->
+        <div class="myapp slds-p-horizontal_medium">
+          <ul id="contact-list" class="slds-has-dividers_bottom-space"></ul>
+        </div>
+        <!-- / PRIMARY CONTENT WRAPPER -->
+        <!-- FOOTER -->
+        <!-- / FOOTER -->
+      </div>
+      <!-- / REQUIRED SLDS WRAPPER -->
+      <!-- JAVASCRIPT -->
+        <script>
+  (function () {
+    var contact = new SObjectModel.Student__c();
+    var contactList = document.getElementById('contact-list');
+    /* FUNCTION createTile */
+    function createTile(record) {
+      return ['<li class="slds-item">', '<div class="slds-tile slds-media">',
+        '<div class="slds-media__body">', '<h3 class="slds-truncate" title="', record.get('Name'),
+        '"><a href="javascript:void(0);">', record.get('Name'), '</a></h3>',
+        '<div class="slds-tile__detail slds-text-body_small">', '<p class="slds-truncate">', record.get(
+          'Name'), '</p>', '</div>', '</div>', '</div>', '</li>'
+      ].join('');
+    }
+    /* FUNCTION createTile */
+    contact.retrieve({
+      orderby: [{
+        LastModifiedDate: 'DESC'
+      }],
+      limit: 810
+    }, function (error, records) {
+      if (error) {
+        alert(error.message);
+      } else {
+        contactList.innerHTML = records.map(createTile).join('');
+      }
+    });
+  })();
+</script>
+      <!-- / JAVASCRIPT -->
+    </body>
+    </head>
+    </html>
+</apex:page>

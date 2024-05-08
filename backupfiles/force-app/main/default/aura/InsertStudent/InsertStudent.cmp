@@ -1,0 +1,28 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	
+    <aura:attribute name="newStudent" type="Student__c"/>
+    <lightning:input aura:id="studentname" label="Student Name"
+                             name="studentname"
+                             value="{!v.newStudent.Name}"
+                             required="true"/> 
+    <lightning:input aura:id="studentDob" label="Student DOB"
+                             name="studentdob"
+                             value="{!v.newStudent.DOB__C}"
+                             required="true"/> 
+    <lightning:input aura:id="studentMob" label="Student Mobile"
+                             name="studentMob"
+                             value="{!v.newStudent.Mobile__c}"
+                             required="true"/> 
+    <lightning:input aura:id="studentCntry" label="Student Country"
+                             name="studentCntry"
+                             value="{!v.newStudent.Country__c}"
+                             required="true"/> 
+    <lightning:input aura:id="studentState" label="Student State"
+                             name="studentState"
+                             value="{!v.newStudent.State__c}"
+                             required="true"/> 
+     <lightning:button label="Insert Student" 
+                              class="slds-m-top--medium"
+                              variant="brand"
+                              onclick="{!c.clickInsert}"/>
+</aura:component>

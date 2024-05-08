@@ -1,0 +1,4 @@
+@isTest
+global class ParkServiceMock{
+  
+}

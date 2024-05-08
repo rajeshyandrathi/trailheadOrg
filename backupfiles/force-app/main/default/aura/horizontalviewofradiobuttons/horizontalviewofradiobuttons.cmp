@@ -1,0 +1,36 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
+	<aura:attribute name="colors" type="List" default="[
+                                                       {'label': 'Red', 'value': 'Red'},
+                                                       {'label': 'Blue', 'value': 'Blue'},
+                                                       {'label': 'Yellow', 'value': 'Yellow'}
+                                                       ]"/>    
+    
+    <aura:attribute name="fruits" type="List" default="[
+                                                       {'label': 'Apple', 'value': 'Apple'},
+                                                       {'label': 'Banana', 'value': 'Banana'},
+                                                       {'label': 'Mango', 'value': 'Mango'}
+                                                       ]"/>
+    
+    
+    <aura:attribute name="ColorValue" type="String" />
+    <aura:attribute name="FruitValue" type="String" />
+    
+    <b>Default	 view of radio button group in Lightning Component</b>   
+    
+    <lightning:radioGroup name="myColors" 
+                          label="Select Color [default view ]"
+                          options="{! v.colors }"
+                          value="{! v.ColorValue }"
+                          type="radio"
+                          />
+    <hr/>
+    <b>Horizontal view of radio button group in Lightning Component</b> 
+   <!-- radio buttons in horizontal view --> 
+    <lightning:radioGroup name="myFruits" 
+                          label="Select Fruits [horizontal view]"
+                          options="{! v.fruits }"
+                          value="{! v.FruitValue }"
+                          type="radio"
+                          class="customRadioCls"
+                          />
+</aura:component>
